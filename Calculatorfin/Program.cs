@@ -28,7 +28,7 @@ namespace Calculatorfin
                 Console.WriteLine("Пожалуйста, введите первое число:");
 
                 Console.ForegroundColor = ConsoleColor.Green;
-                double a = Convert.ToDouble(Console.ReadLine());
+                double a = Convert.ToDouble(Console.ReadLine()); // неплохо было бы добавить обработчик исключения на случай, если не получиться конвертировать строку в число (ввели, например, буквы)
                 Console.ResetColor();
 
                 Console.WriteLine("Введите знак нужной Вам операции: '+' '-' '*' '/'");
@@ -40,11 +40,11 @@ namespace Calculatorfin
                 Console.WriteLine("Введите второе число:");
 
                 Console.ForegroundColor = ConsoleColor.Green;
-                double b = Convert.ToDouble(Console.ReadLine());
+                double b = Convert.ToDouble(Console.ReadLine());// неплохо было бы добавить обработчик исключения на случай, если не получиться конвертировать строку в число (ввели, например, буквы)
                 Console.ResetColor();
 
                 switch (operation)
-                {
+                { // код каждого блока case дублируется (это нарушает один из принципов ООП - принцип DRY), лучше в такой ситуации создать отдельный метод и его просто вызывать в нужных местах
                     case "+":
                         Console.WriteLine();
                         Console.ForegroundColor = ConsoleColor.DarkYellow;
